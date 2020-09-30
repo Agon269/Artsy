@@ -1,0 +1,46 @@
+//service
+{
+   "name": "req.body.name",
+        "description": "ajkdfbk kjaDHLKJAFDSF JKABDFKJABSDF AKJDFBSKJASDfahjsafdlkja jABFJHASDBLF ASDUIFHKJADHSLK  AJKHDSFLKJABSLDFKJB AFDKJBASKDFJBASKLDF AFKDJBFKJABSDFKJB JFABSKJDFBALKSDFJsHJALBDFHJA jabdljABDJFHBLAJSD ALHJDBFLJASDF fbdljhabsdljhfbalsjhd ajdfbljkasbdf",
+       
+          "country": "eq.body.country",
+          "city": "req.body.city",
+          "streetAddress": "req.body.add",
+        
+        "phone":" req.body.tel",
+         "email": "req.body.email" 
+}
+
+//provider
+
+{
+    "username":"abel@dfdas.com",
+    "password":"jhglads8as970d9f8"
+}
+
+//buyer
+
+{
+    "username":"theotherguy@dfdas.com",
+    "password":"jhglads8as970d9f8"
+}
+
+
+
+
+//order  
+{   
+       "Adress": {
+          "country": "req.body.country",
+          "city":" req.body.city",
+          "streetAddress": "req.body.add"
+        },
+        "contact": {"phone": "req.body.pnum" },
+        "date": "req.body.date",
+        "paymentInfo": {
+          "cardnum":" req.body.cardnum",
+          "cardsec":" rec.body.cardsec",
+          "ccv":"req.body.ccv"
+        },
+        "time": "req.body.time"
+      }
