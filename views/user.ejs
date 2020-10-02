@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include("partials/head") -%>
+  <body>
+    <header>
+        <!-- Navbar -->
+        <body>
+          <style>
+            body{
+              background-image: url("img/background.svg");
+              z-index: -2;
+              background-repeat: repeat-y;
+              background-repeat: repeat-x;
+            }
+          </style>
+          
+          <nav
+          class="mb-1 navbar navbar-expand-lg navbar-dark lighten-1 fixed-top scrolling-navbar"
+          id="mynav"
+        >
+          <a class="navbar-brand" href="#">Servicer</a>
+        
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent-555"
+            aria-controls="navbarSupportedContent-555"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item activee">
+                <a class="nav-link" href="#"
+                  >Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Provide Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Navbar -->
+      </header>
+
+
+
+
+
+<br>
+<br>
+
+        <div id="container" class="container justify-content-center flex">
+          <div id="nav">
+            <div id="nav-cont">
+              <a href="#profile" class="profile" title="Profile"
+                ><i class="icon fas fa-user" style="margin-left: 7px"></i
+              ></a>
+              <a href="#cart" class="cart" title="Cart"
+                ><i class="icon fas fa-shopping-cart"></i
+              ></a>
+              <a href="#sales" class="sales" title="Sales"
+                ><i class="icon fas fa-tags"></i
+              ></a>
+              <a href="#archive" class="archive" title="art"
+              ><i class="icon fas fa-palette"></i
+            ></a>
+
+              <a href="#settings" class="settings" title="Settings"
+                ><i class="icon fas fa-cog settings"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="content">
+            <div id="profile" class="active">
+              <h1>Profile</h1>
+
+              <p>
+                Eam putant latine eu, in admodum ancillae molestie his, duo in
+                accommodare definitionem signiferumque. Has dictas aliquam
+                consectetuer et. Sea cu dolore incorrupte. Vero fabulas
+                tincidunt duo eu, pro in sententiae cotidieque. Rebum omnium
+                persequeris has ad, veri adhuc nemore ut qui. In sit maluisset
+                reformidans, argumentum dissentiet mei te.
+              </p>
+            </div>
+
+            <div id="cart">
+              <h1>Shopping Cart</h1>
+
+              <p>
+                Eam putant latine eu, in admodum ancillae molestie his, duo in
+                accommodare definitionem signiferumque. Has dictas aliquam
+                consectetuer et. Sea cu dolore incorrupte. Vero fabulas
+                tincidunt duo eu, pro in sententiae cotidieque. Rebum omnium
+                persequeris has ad, veri adhuc nemore ut qui. In sit maluisset
+                reformidans, argumentum dissentiet mei te.
+              </p>
+            </div>
+
+            <div id="sales">
+              <h1>Sales</h1>
+
+              <p>
+                Eam putant latine eu, in admodum ancillae molestie his, duo in
+                accommodare definitionem signiferumque. Has dictas aliquam
+                consectetuer et. Sea cu dolore incorrupte. Vero fabulas
+                tincidunt duo eu, pro in sententiae cotidieque. Rebum omnium
+                persequeris has ad, veri adhuc nemore ut qui. In sit maluisset
+                reformidans, argumentum dissentiet mei te.
+              </p>
+            </div>
+            
+            <div id="archive">
+              <h1>art</h1>
+
+              <p>
+                Eam putant latine eu, in admodum ancillae molestie his, duo in
+                accommodare definitionem signiferumque. Has dictas aliquam
+                consectetuer et. Sea cu dolore incorrupte. Vero fabulas
+                tincidunt duo eu, pro in sententiae cotidieque. Rebum omnium
+                persequeris has ad, veri adhuc nemore ut qui. In sit maluisset
+                reformidans, argumentum dissentiet mei te.
+              </p>
+            </div>
+
+            <div id="settings">
+              <h2>Settings</h2>
+              <form class="text-center" style="color: #757575">
+                <div class="form-row">
+                  <div class="col">
+                    <!-- First name -->
+                    <div class="md-form">
+                      <input
+                        type="text"
+                        id="materialRegisterFormFirstName"
+                        class="form-control"
+                      />
+                      <label for="materialRegisterFormFirstName"
+                        >First name</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- Last name -->
+                    <div class="md-form">
+                      <input
+                        type="text"
+                        id="materialRegisterFormLastName"
+                        class="form-control"
+                      />
+                      <label for="materialRegisterFormLastName"
+                        >Last name</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- E-mail -->
+                <div class="md-form mt-0">
+                  <input
+                    type="email"
+                    id="materialRegisterFormEmail"
+                    class="form-control"
+                  />
+                  <label for="materialRegisterFormEmail" class="active"
+                    >E-mail</label
+                  >
+                </div>
+
+                <!-- Password -->
+                <div class="md-form">
+                  <input
+                    type="password"
+                    id="materialRegisterFormPassword"
+                    class="form-control"
+                    aria-describedby="materialRegisterFormPasswordHelpBlock"
+                  />
+                  <label
+                    for="materialRegisterFormPassword"
+                    class="active"
+                    >Password</label
+                  >
+                  <small
+                    id="materialRegisterFormPasswordHelpBlock"
+                    class="form-text text-muted mb-4"
+                  >
+                    At least 8 characters and 1 digit
+                  </small>
+                </div>
+
+                <!-- Newsletter -->
+          
+                <!-- Sign up button -->
+                <button
+                  class="btn secbtn btn-rounded btn-block my-4 waves-effect z-depth-0"
+                  type="submit"
+                >
+                 Change
+                </button>
+
+
+                <hr />
+              </form>
+            </div>
+          </div>
+        </div>
+  
+
+        <%-include("partials/foot") -%>
+  </body>
+</html>

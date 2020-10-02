@@ -1,19 +1,19 @@
-const Service = require("../models/service");
+const Art = require("../models/art");
 const User = require("../models/user");
-const Order = require("../models/orderSchema");
+const Purchase = require("../models/purchase");
 const mongoose = require("mongoose");
 const apps = require("../APP/apps");
 
 module.exports = (app) => {
-  app.post("/order/:service_id", async (req, res) => {
+  //get the art to the display art page
+  // get the art to the payment page
+  //post payment to the order route
+
+  app.post("/order/:art_id", async (req, res) => {
     if (req.isAuthenticated()) {
       const user = await apps.findOne(User, req.user.id);
-      //const service = await apps.findOne(Service, req.params.service_id);
 
-      //add order to buyer
-      //add order to provider
-      //create order
-      const order = new Order({
+      const purchase = new Purchase({
         orderer: user.username,
         Adress: {
           country: req.body.country,
@@ -27,16 +27,19 @@ module.exports = (app) => {
           cardsec: req.body.cardsec,
           ccv: req.body.ccv,
         },
-        servicer: req.params.service_id,
+        servicer: req.params.art_id,
         time: req.body.time,
       });
 
-      order.save({ order }, (err, serv) => {
+      purchase.save({ purchase }, (err, serv) => {
         if (err) {
           console.log(err);
         } else {
-          Service.findOneAndUpdate(
-            { _id: req.params.service_id },
+          //need to delete the art
+          //then add the data of the art to purchased of the user array
+          //then add the art to the sellers order array
+          Art.findOneAndUpdate(
+            { _id: req.params.art_id },
             { $push: { orders: order } },
             (err, ser) => {
               if (err) {

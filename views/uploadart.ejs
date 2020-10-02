@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Upload</title>
+  <%-include("partials/head") -%>
+  <body>
+    <!-- Start your project here-->
+
+    <!--Main layout-->
+    <main class="mt-5 pt-4">
+      <div class="container wow fadeIn">
+        <!-- Heading -->
+        <h2 class="my-5 h2 text-center">upload form</h2>
+
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-8 mb-4">
+            <!--Card-->
+            <div class="card">
+              <!--Card content-->
+              <form class="card-body" action="/uploadart" method="POST">
+                <!--Grid row-->
+                <div class="row">
+                  <!--Grid column-->
+                  <div class="col-md-6 mb-2">
+                    <!--firstName-->
+                    <div class="md-form">
+                      <input
+                        type="text"
+                        id="firstName"
+                        class="form-control"
+                        name="name"
+                      />
+                      <label for="firstName" class="">Name</label>
+                    </div>
+
+                    <div class="md-form">
+                      <input
+                        type="text"
+                        id="lastname"
+                        class="form-control"
+                        name="painter"
+                      />
+                      <label for="lastname" class=""
+                        >Painter/crafter name</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="md-form">
+                  <textarea
+                    id="form7"
+                    class="md-textarea form-control"
+                    rows="3"
+                    name="description"
+                  ></textarea>
+                  <label for="form7">describe the art</label>
+                </div>
+
+                <!--address-->
+                <div class="md-form mb-5">
+                  <input
+                    type="text"
+                    id="address"
+                    class="form-control"
+                    placeholder="1234 Main St"
+                    name="address1"
+                  />
+                  <label for="address" class="">Address</label>
+                </div>
+
+                <!--address-2-->
+                <div class="md-form mb-5">
+                  <input
+                    type="text"
+                    id="address-2"
+                    class="form-control"
+                    placeholder="Apartment or suite"
+                    name="address2"
+                  />
+                  <label for="address-2" class="">Address 2 (optional)</label>
+                </div>
+                <!--Grid row-->
+                <button class="btn btn-lg btn-block mybtn" type="submit">
+                  Upload art
+                </button>
+              </form>
+            </div>
+            <!--/.Card-->
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+    </main>
+    <!--Main layout-->
+    <!-- End your project here-->
+    <script>
+      new WOW().init();
+    </script>
+    <%-include("partials/foot") -%>
+  </body>
+</html>

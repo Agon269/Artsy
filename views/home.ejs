@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>home</title>
+  <%-include("partials/head") -%>
+  <!--Main Navigation-->
+
+  <!-- Navbar -->
+  <body>
+    <style>
+      body {
+        background-image: url("assets/img/background.svg");
+        z-index: -2;
+        background-repeat: repeat-x;
+      }
+    </style>
+    <% if(userActive){ %> <%-include("partials/headerloged") -%> <%}else{%>
+    <%-include("partials/header1") -%> <%};%>
+
+    <main class="mt-5 pt-5">
+      <div class="container">
+        <!--Section: Magazine v.1-->
+        <section class="wow fadeIn">
+          <!--Section heading-->
+          <h2 class="h1 text-center my-5 font-weight-bold">Services</h2>
+
+          <!--Grid row-->
+          <div class="row text-left">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12">
+              <!--Image-->
+              <div class="view overlay rounded z-depth-1-half mb-3">
+                <img
+                  src="https://mdbootstrap.com/img/Photos/Others/images/77.jpg"
+                  class="img-fluid"
+                  alt="Sample post image"
+                />
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!--Excerpt-->
+              <div class="news-data">
+                <a href="" class="light-blue-text">
+                  <h6>
+                    <i class="fas fa-plane"></i>
+                    <strong> Travels</strong>
+                  </h6>
+                </a>
+                <p>
+                  <strong> <i class="fa fa-clock-o"></i> 20/08/2018</strong>
+                </p>
+              </div>
+              <h3>
+                <a>
+                  <strong>This is title of the news</strong>
+                </a>
+              </h3>
+              <p>
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                nihil impedit quo minus id quod maxime placeat facere possimus,
+                omnis voluptas assumenda est, omnis dolor repellendus.
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12">
+              <!--Image-->
+              <div class="view overlay rounded z-depth-1-half mb-3">
+                <img
+                  src="https://mdbootstrap.com/img/Photos/Others/images/32.jpg"
+                  class="img-fluid"
+                  alt="Sample post image"
+                />
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!--Excerpt-->
+              <div class="news-data">
+                <a href="" class="light-blue-text">
+                  <h6>
+                    <i class="fa fa-plane"></i>
+                    <strong> Travels</strong>
+                  </h6>
+                </a>
+                <p>
+                  <strong> <i class="fa fa-clock-o"></i> 20/08/2018</strong>
+                </p>
+              </div>
+              <h3>
+                <a>
+                  <strong>This is title of the news</strong>
+                </a>
+              </h3>
+              <p>
+                Nam libero tempore, cum soluta nobis est eligendi optio cumque
+                nihil impedit quo minus id quod maxime placeat facere possimus,
+                omnis voluptas assumenda est, omnis dolor repellendus.
+              </p>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!--/Section: Magazine v.1-->
+      </div>
+    </main>
+    <!--Main layout-->
+
+    <!--/.Footer-->
+    <script>
+      new WOW().init();
+    </script>
+    <%-include("partials/foot") -%>
+  </body>
+</html>

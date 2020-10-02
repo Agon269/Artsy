@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const Services = require("../models/service");
+const Art = require("../models/art");
 const mongoose = require("mongoose");
 const apps = require("../APP/apps");
 
@@ -8,8 +8,21 @@ module.exports = (app) => {
   //there should be two types of headers one for logged in and ..
   //need to check authentication
   app.get("/", async (req, res) => {
-    const services = await apps.getAllDocs(Services);
-    console.log(services);
+    const services = await apps.getAllDocs(Art);
+
+    if (req.isAuthenticated()) {
+      let homeInfo = {
+        userActive: true,
+        userData: req.user,
+      };
+      res.render("home", homeInfo);
+    } else {
+      let homeInfo = {
+        userActive: false,
+      };
+      res.render("home", homeInfo);
+    }
+
     //pass all services for display
   });
 };

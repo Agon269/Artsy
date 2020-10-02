@@ -43,13 +43,13 @@ mongoose.connection.once("open", () => {
 require("./routes/userauth")(app);
 
 //service registration
-require("./routes/regservice")(app);
+require("./routes/uploadArt")(app);
 
 //homepage
 require("./routes/home")(app);
 
 //provider home
-require("./routes/provider")(app);
+// require("./routes/provider")(app);
 
 //orderroute
 require("./routes/order")(app);

@@ -4,6 +4,7 @@ const passport = require("passport");
 // const findOrCreate = require("mongoose-findorcreate");
 
 const userSchema = new mongoose.Schema({
+  name: String,
   username: {
     type: String,
     minlength: 6,
@@ -13,8 +14,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     minlength: 5,
   },
-  provider: String,
-  ordered: [],
+
+  arts: [],
+  order: [],
+  purchased: [],
 });
 
 userSchema.plugin(passportLocalMongoose);

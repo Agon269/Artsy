@@ -7,7 +7,7 @@ module.exports = (app) => {
   //register
   app.post("/register", (req, res) => {
     User.register(
-      { username: req.body.username },
+      { username: req.body.username, name: req.body.name },
       req.body.password,
       (err, user) => {
         if (err) {
@@ -15,7 +15,7 @@ module.exports = (app) => {
         } else {
           passport.authenticate("local")(req, res, () => {
             //route after registration
-            res.send("registered!");
+            res.redirect("/");
           });
         }
       }
@@ -34,15 +34,23 @@ module.exports = (app) => {
         console.log(err);
       } else {
         passport.authenticate("local")(req, res, () => {
-          res.send("success!");
+          res.redirect("/");
         });
       }
     });
   });
 
   //get routes for generating form
-  app.get("/login", (req, res) => {
-    res.send("this is login");
+  app.get("/signin", (req, res) => {
+    res.render("signin");
+  });
+  app.get("/signup", (req, res) => {
+    res.render("signup");
+  });
+
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
   });
 
   app.get("/test", (req, res) => {
