@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
   arts: [],
   order: [],
   purchased: [],
+  sold: [],
 });
 
 userSchema.plugin(passportLocalMongoose);

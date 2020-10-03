@@ -47,13 +47,9 @@
                     <strong> <%= element.name %> </strong>
                   </h6>
                 </a>
-                <p>
-                  <strong>this should be date maybe</strong>
-                </p>
+                <h3><%= element.artist %></h3>
+                <br />
               </div>
-              <h3>
-                <strong><%= element.artist %></strong>
-              </h3>
             </div>
             <% }) %>
             <!--Grid column-->
@@ -62,6 +58,7 @@
 
             <!--Grid column-->
           </div>
+
           <!--Grid row-->
         </section>
         <!--/Section: Magazine v.1-->
@@ -69,10 +66,6 @@
     </main>
     <!--Main layout-->
 
-    <!--/.Footer-->
-    <script>
-      new WOW().init();
-    </script>
     <%-include("partials/foot") -%>
   </body>
 </html>

@@ -15,6 +15,7 @@ const artSchema = new mongoose.Schema({
   Adress: {},
   artist: String,
   owner: String,
+  price: String,
 });
 
 const Art = new mongoose.model("Arts", artSchema);

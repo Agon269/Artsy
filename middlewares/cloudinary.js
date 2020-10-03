@@ -1,8 +1,8 @@
 var cloudinary = require("cloudinary").v2;
-
+require("dotenv").config();
 cloudinary.config({
-  cloud_name: "dpvxp3lsz",
-  api_key: "441947843741336",
+  cloud_name: process.env.CLOUDAPIKEY,
+  api_key: process.env.POfnjJ_WDusShH8yC0BFQQynwwM,
   api_secret: "POfnjJ_WDusShH8yC0BFQQynwwM",
 });
 

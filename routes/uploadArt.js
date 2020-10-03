@@ -38,8 +38,8 @@ module.exports = (app) => {
         description: req.body.description,
         Adress: {
           address1: req.body.address1,
-          address2: req.body.address2,
         },
+        price: req.body.price,
         artist: req.body.painter,
         img1: imgOne,
         img2: imgSec,

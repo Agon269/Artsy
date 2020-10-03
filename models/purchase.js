@@ -1,15 +1,16 @@
 const mongoose = require("mongoose");
 
-const purchaseSchema = new mongoose.Schema({
-  purchaser: {
-    type: String,
-    minlength: 5,
+const purchaseSchema = new mongoose.Schema(
+  {
+    purchaser: String,
+    date: String,
+    totPaied: String,
+    seller: String,
+    artist: String,
+    adress: {},
   },
-  date: String,
-  time: String,
-  paymentInfo: {},
-  seller: String,
-});
+  { timestamps: true }
+);
 
 const Purchase = new mongoose.model("Purchases", purchaseSchema);
 
