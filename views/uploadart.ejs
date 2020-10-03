@@ -3,7 +3,13 @@
   <title>Upload</title>
   <%-include("partials/head") -%>
   <body>
+    <%-include("partials/headerloged") -%>
     <!-- Start your project here-->
+    <style>
+      .disParent {
+        margin: 10px;
+      }
+    </style>
 
     <!--Main layout-->
     <main class="mt-5 pt-4">
@@ -12,17 +18,97 @@
         <h2 class="my-5 h2 text-center">upload form</h2>
 
         <!--Grid row-->
-        <div class="row">
+        <div class="row align-items-center mx-auto">
           <!--Grid column-->
-          <div class="col-md-8 mb-4">
+          <div class="col-md-8 align-self-center mx-auto">
             <!--Card-->
             <div class="card">
               <!--Card content-->
-              <form class="card-body" action="/uploadart" method="POST">
+              <form
+                class="card-body needs-validation"
+                action="/uploadart"
+                method="POST"
+                enctype="multipart/form-data"
+                novalidate
+              >
+                <div class="row">
+                  <p class="h2 text-center">Upload images of your art</p>
+                  <div class="mx-auto" style="width: 800px">
+                    <div
+                      class="text-center d-block"
+                      style="margin-bottom: 40px"
+                    >
+                      <div
+                        class="text-center d-inline-block disParent"
+                        style="margin-bottom: 40px"
+                      >
+                        <img
+                          class="d-block mx-auto disImg"
+                          src="https://res.cloudinary.com/dpvxp3lsz/image/upload/v1601695499/arts/elements-of-art-6_ry1vp6.webp"
+                          style="width: 100px; margin-bottom: 10px"
+                        /><label class="btn secbtn" for="bannerInput"
+                          ><i class="fa fa-file" style="width: 25px"></i
+                          >Upload</label
+                        ><input
+                          type="file"
+                          id="bannerInput"
+                          class="bannerInput"
+                          hidden=""
+                          required
+                          name="img1"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                      </div>
+
+                      <div
+                        class="text-center d-inline-block disParent"
+                        style="margin-bottom: 40px"
+                      >
+                        <img
+                          class="d-block mx-auto disImg"
+                          src="https://res.cloudinary.com/dpvxp3lsz/image/upload/v1601695499/arts/elements-of-art-6_ry1vp6.webp"
+                          style="width: 100px; margin-bottom: 10px"
+                        /><label class="btn secbtn" for="bannerInput1"
+                          ><i class="fa fa-file" style="width: 25px"></i
+                          >Upload</label
+                        ><input
+                          type="file"
+                          id="bannerInput1"
+                          class="bannerInput"
+                          hidden=""
+                          name="img2"
+                          required
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                      </div>
+                      <div
+                        class="text-center d-inline-block disParent"
+                        style="margin-bottom: 40px"
+                      >
+                        <img
+                          class="d-block mx-auto disImg"
+                          src="https://res.cloudinary.com/dpvxp3lsz/image/upload/v1601695499/arts/elements-of-art-6_ry1vp6.webp"
+                          style="width: 100px; margin-bottom: 10px"
+                        /><label class="btn secbtn" for="bannerInput2"
+                          ><i class="fa fa-file" style="width: 25px"></i
+                          >Upload</label
+                        ><input
+                          type="file"
+                          id="bannerInput2"
+                          class="bannerInput"
+                          hidden=""
+                          name="img3"
+                          required
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <!--Grid row-->
                 <div class="row">
                   <!--Grid column-->
-                  <div class="col-md-6 mb-2">
+                  <div class="col-md-12 mb-2">
                     <!--firstName-->
                     <div class="md-form">
                       <input
@@ -30,6 +116,7 @@
                         id="firstName"
                         class="form-control"
                         name="name"
+                        required
                       />
                       <label for="firstName" class="">Name</label>
                     </div>
@@ -40,6 +127,7 @@
                         id="lastname"
                         class="form-control"
                         name="painter"
+                        required
                       />
                       <label for="lastname" class=""
                         >Painter/crafter name</label
@@ -54,6 +142,7 @@
                     class="md-textarea form-control"
                     rows="3"
                     name="description"
+                    required
                   ></textarea>
                   <label for="form7">describe the art</label>
                 </div>
@@ -66,6 +155,7 @@
                     class="form-control"
                     placeholder="1234 Main St"
                     name="address1"
+                    required
                   />
                   <label for="address" class="">Address</label>
                 </div>
@@ -78,6 +168,7 @@
                     class="form-control"
                     placeholder="Apartment or suite"
                     name="address2"
+                    required
                   />
                   <label for="address-2" class="">Address 2 (optional)</label>
                 </div>
@@ -87,6 +178,7 @@
                 </button>
               </form>
             </div>
+            <br />
             <!--/.Card-->
           </div>
           <!--Grid column-->
@@ -95,11 +187,37 @@
         </div>
         <!--Grid row-->
       </div>
+      <br />
+      <br />
     </main>
-    <!--Main layout-->
-    <!-- End your project here-->
     <script>
-      new WOW().init();
+      (function () {
+        "use strict";
+        window.addEventListener(
+          "load",
+          function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName("needs-validation");
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (
+              form
+            ) {
+              form.addEventListener(
+                "submit",
+                function (event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add("was-validated");
+                },
+                false
+              );
+            });
+          },
+          false
+        );
+      })();
     </script>
     <%-include("partials/foot") -%>
   </body>

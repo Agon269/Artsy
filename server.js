@@ -4,17 +4,24 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("passport");
+const path = require("path");
+const ejs = require("ejs");
 
 const app = express();
 
-app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, "public")));
+
+// app.use(bodyParser.json());
+
 app.set("view engine", "ejs");
+
+app.use(bodyParser.json({ limit: "500mb" }));
 app.use(
   bodyParser.urlencoded({
-    extended: true,
+    extended: false,
   })
 );
-app.use(bodyParser.json());
+app.use(express.static(__dirname + "/public"));
 
 app.use(
   session({
@@ -52,10 +59,14 @@ require("./routes/home")(app);
 // require("./routes/provider")(app);
 
 //orderroute
-require("./routes/order")(app);
+require("./routes/purchase")(app);
 
 //user details and edit
 require("./routes/userhome")(app);
+
+app.get("/user", (req, res) => {
+  res.render("user");
+});
 
 app.listen(3000, () => {
   console.log("listening on port 3000");

@@ -8,17 +8,19 @@ module.exports = (app) => {
   //there should be two types of headers one for logged in and ..
   //need to check authentication
   app.get("/", async (req, res) => {
-    const services = await apps.getAllDocs(Art);
+    const arts = await apps.getAllDocs(Art);
 
     if (req.isAuthenticated()) {
       let homeInfo = {
         userActive: true,
         userData: req.user,
+        data: arts,
       };
       res.render("home", homeInfo);
     } else {
       let homeInfo = {
         userActive: false,
+        data: arts,
       };
       res.render("home", homeInfo);
     }
