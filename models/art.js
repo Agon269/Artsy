@@ -10,8 +10,6 @@ const artSchema = new mongoose.Schema({
     minlength: 50,
   },
   img1: String,
-  img2: String,
-  img3: String,
   Adress: {},
   artist: String,
   owner: String,

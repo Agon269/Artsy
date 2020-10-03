@@ -23,16 +23,6 @@ module.exports = (app) => {
       const ret1 = await uploader.uploadFile(path1, pack);
       var imgOne = ret1.data.url;
 
-      var second = req.files.img2;
-      var path2 = second.tempFilePath;
-      const ret2 = await uploader.uploadFile(path2, pack);
-      var imgSec = ret2.data.url;
-
-      var third = req.files.img3;
-      var path3 = third.tempFilePath;
-      const ret3 = await uploader.uploadFile(path3, pack);
-      var imgThird = ret3.data.url;
-
       const art = new Art({
         name: req.body.name,
         description: req.body.description,
@@ -42,8 +32,7 @@ module.exports = (app) => {
         price: req.body.price,
         artist: req.body.painter,
         img1: imgOne,
-        img2: imgSec,
-        img3: imgThird,
+
         owner: req.user._id,
       });
 
@@ -67,7 +56,7 @@ module.exports = (app) => {
         }
       });
     } else {
-      res.redirect("sigin");
+      res.redirect("signin");
     }
   });
 
