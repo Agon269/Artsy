@@ -80,14 +80,14 @@ module.exports = (app) => {
           //here
           User.findByIdAndUpdate(
             { _id: seller },
-            { $set: { arts: [...newArt] }, $push: { sold: theArt } },
+            { $set: { arts: [...newArt] }, $push: { sold: art } },
             (err, docs) => {
               if (err) {
                 console.log(err);
               } else {
                 User.findByIdAndUpdate(
                   { _id: req.user.id },
-                  { $push: { purchased: theArt } },
+                  { $push: { purchased: art } },
                   (err, docs) => {
                     if (err) {
                       console.log(err);

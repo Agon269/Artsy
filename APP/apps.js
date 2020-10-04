@@ -36,25 +36,24 @@ function updateDoc(Model, id, update) {
   });
 }
 
-// module.exports.artMove = artMove;
-// function artMove(model, id, artid) {
-//   return new Promise(function (resolve) {
-//     model.findById(id, (err, doc) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         const { art } = doc;
-//         let newArt = art.filter((item) => {
-//           return item.id != artid;
-//         });
-//         model.updateOne(
-//           id,
-//           { $set: { art: { ...newArt } }, $push: { sold: artid } },
-//           (err, doc) => {
-//             resolve(doc);
-//           }
-//         );
-//       }
-//     });
-//   });
-// }
+module.exports.getHisArt = getHisArt;
+
+function getHisArt(Model, owner) {
+  return new Promise(function (resolve) {
+    Model.find({ owner }, function (err, docs) {
+      if (err) {
+        console.log(err);
+      } else {
+        resolve(docs);
+      }
+    });
+  });
+}
+
+// Art.find({ owner: req.user.id }, (err, docs) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     arts = docs;
+//   }
+// });

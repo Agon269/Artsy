@@ -68,10 +68,7 @@ module.exports = (app) => {
       };
       res.render("uploadart", uploadInfo);
     } else {
-      let uploadInfo = {
-        userActive: false,
-      };
-      res.redirect("signin", uploadInfo);
+      res.redirect("/signin");
     }
   });
 };

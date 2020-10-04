@@ -1,98 +1,106 @@
 body {
-  margin: 0;
-  padding: 0;
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif !important;
 }
 
-#container {
-  width: 700px;
-  height: 400px;
-  background: #f5f5f5;
-  margin: 4em auto;
+.first-main-menu {
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  height: 60vh !important;
 }
 
-#nav {
-  height: 100%;
-  background: #fafafa;
-  border-right: solid 1px #ddd;
-  box-shadow: 1px 0 0 #fff;
-  display: table;
-  float: left;
-  z-index: 2;
+.main-leftsidebar-div .nav-link {
+  border-radius: 0;
+  padding: 0.2rem 1rem !important;
 }
 
-#nav-cont {
-  display: table-cell;
-  vertical-align: middle;
+[data-component="leftsidebar"] .leftsidebar {
+  position: fixed;
+  z-index: 1;
 }
 
-.icon {
-  color: #9e9e9e;
-  font-size: 36px;
-  padding: 15px 30px;
-  cursor: pointer;
-  display: table;
-  transition: 0.3s;
+[data-component="leftsidebar"] .first-menu {
+  position: fixed;
+  background-color: black;
+  height: 100vw;
+  width: 62px;
+  top: 100px;
+  border-color: white;
+  box-shadow: 0px 2px 6px 0px;
+  overflow: hidden;
+  transition: width 0.5s;
 }
 
-.icon:not(.no-hover):hover {
-  color: #757575;
+[data-component="leftsidebar"] .first-menu a {
+  color: white;
 }
 
-.checked {
-  color: rgb(255, 45, 96);
+[data-component="leftsidebar"] .first-menu i {
+  font-size: 24px;
 }
 
-h1 {
-  font-family: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif;
-  font-weight: 300;
-  color: #424242;
-  text-shadow: 1px 1px 1px #fff;
-  font-size: 3em;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-p {
-  font-family: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif;
-  color: #424242;
-  text-shadow: 1px 1px 0 #fff;
-  font-size: 1em;
-  line-height: 1.4em;
-  text-align: center;
-  width: 500px;
-}
-
-#profile,
-#cart,
-#sales,
-#archive,
-#settings {
-  width: 604px;
-  margin-left: 94px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  margin-top: -100px;
+[data-component="leftsidebar"] .first-menu span {
+  font-size: 15px;
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif !important;
+  white-space: nowrap;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  font-weight: 300;
 }
 
-#profile.active,
-#cart.active,
-#sales.active,
-#archive.active,
-#settings.active {
-  margin-top: 0;
-  display: flex;
+[data-component="leftsidebar"] .first-menu:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+
+[data-component="leftsidebar"] .first-menu .list-group-item {
+  border-radius: 0;
+}
+
+[data-component="leftsidebar"] .first-menu li:hover {
+  background-color: rgba(7, 7, 7, 0.06);
+  border-right: 5px solid rgb(255, 45, 96);
+}
+
+[data-component="leftsidebar"] .first-menu:hover {
+  width: 220px;
+}
+
+[data-component="leftsidebar"] .list-group-item {
+  font-size: 15px;
+}
+
+[data-component="leftsidebar"] .submenu {
+  position: fixed;
+  left: 220px;
+  width: 220px;
+  margin-top: -42px;
+  background-color: white;
+  box-shadow: 0px 1px 2px 0px;
+  opacity: 0;
+  visibility: hidden;
+  line-height: normal !important;
+  transition: 300ms opacity 300ms, 300ms visibility 300ms;
+}
+
+[data-component="leftsidebar"] .submenu a {
+  color: black !important;
+}
+
+[data-component="leftsidebar"] .submenu li:hover {
+  border-left: none;
+  border-right: 5px solid rgb(133, 135, 150);
+}
+
+[data-component="leftsidebar"] .first-menu li:hover .submenu {
+  visibility: visible;
   opacity: 1;
 }
-@media only screen and (max-width: 600px) {
-  #container {
-    transform: scale(0.6);
-    margin-top: -20px;
-    margin-left: -160px;
-  }
+
+[data-component="leftsidebar"] .list-group-item {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+.first-menu {
+  top: 20em;
 }

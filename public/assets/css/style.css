@@ -1,5 +1,5 @@
 body {
-  font-family: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif;
+  font-family: Source Sans Pro, Helvetica Neue, Helvetica, sans-serif !important;
 }
 
 #mynav {
@@ -8,6 +8,7 @@ body {
 .activee {
   background-color: rgb(255, 45, 96);
 }
+
 .mybtn {
   background-color: rgb(255, 45, 96);
   color: black;

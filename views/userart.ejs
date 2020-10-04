@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="/assets/css/account.css" />
+  <%-include("partials/head") -%>
+  <body>
+    <style>
+      body {
+        background-image: url("/assets/img/background.svg") !important;
+        z-index: -2;
+        background-repeat: repeat-y;
+        background-repeat: repeat-x;
+      }
+    </style>
+    <% if(userActive){ %> <%-include("partials/headerloged") -%> <%}else{%>
+    <%-include("partials/header1") -%> <%};%>
+
+    <div class="main-leftsidebar-div" data-component="leftsidebar">
+      <div class="leftsidebar">
+        <ul
+          class="nav list-group flex-column d-inline-block first-menu scrollbar-indigo thin first-main-menu"
+        >
+          <li
+            class="nav-item list-group-item pl-1 py-2"
+            style="margin-top: 40px !important"
+          >
+            <a class="nav-link" href="/userhome"
+              ><i class="icon fas fa-tags"
+                ><span class="ml-2 align-middle">Purchases</span></i
+              ></a
+            >
+          </li>
+          <li class="nav-item list-group-item pl-1 py-2">
+            <a class="nav-link" href="#"
+              ><i class="icon fas fa-palette"
+                ><span class="ml-2 align-middle">My art</span></i
+              ></a
+            >
+          </li>
+
+          <li class="nav-item list-group-item pl-1 py-2">
+            <a class="nav-link" href="#"
+              ><i class="icon far fa-laugh"
+                ><span class="ml-2 align-middle">Sold</span></i
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="mt-5 pt-5">
+      <div class="container">
+        <!--Section: Magazine v.1-->
+        <section class="wow fadeIn">
+          <!--Section heading-->
+          <h2 class="h1 text-center my-5 font-weight-bold">Your art</h2>
+
+          <!--Grid row-->
+          <div class="row text-left">
+            <!--Grid column-->
+            <% art.map((element)=>{ %>
+            <div class="col-lg-6 col-md-12">
+              <!--Image-->
+              <div class="view overlay rounded z-depth-1-half mb-3">
+                <img
+                  src="<%= element.img1 %> "
+                  class="img-fluid"
+                  alt="Sample post image"
+                />
+
+                <div class="mask rgba-white-slight"></div>
+              </div>
+
+              <!--Excerpt-->
+              <div class="news-data">
+                <a href="" class="light-blue-text">
+                  <h6>
+                    <strong> <%= element.name %> </strong>
+                  </h6>
+                </a>
+                <h3><%= element.artist %></h3>
+              </div>
+              <a href="/deleteart/<%= element._id %> ">
+                <span class="badge purple mr-1">Delete</span>
+              </a>
+            </div>
+            <br />
+            <br />
+            <% }) %>
+            <!--Grid column-->
+
+            <!--Grid column-->
+
+            <!--Grid column-->
+          </div>
+
+          <!--Grid row-->
+        </section>
+        <!--/Section: Magazine v.1-->
+      </div>
+    </main>
+    <!--Main layout-->
+    <%-include("partials/foot") -%>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

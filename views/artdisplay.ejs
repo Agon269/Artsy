@@ -3,7 +3,8 @@
   <title>Arts</title>
   <%-include("partials/head") -%>
   <body>
-    <%-include("partials/header1") -%>
+    <% if(userActive){ %> <%-include("partials/headerloged") -%> <%}else{%>
+    <%-include("partials/header1") -%> <%};%>
     <!--Main layout-->
     <style>
       body {
@@ -84,32 +85,10 @@
         <!--Grid row-->
 
         <!--Grid row-->
-        <div class="row wow fadeIn">
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-12 mb-4">
-            <img
-              src="<%= data.img1 %> "
-              class="img-fluid"
-              alt="first image of artist"
-            />
-          </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <img src="<%= data.img2 %> " class="img-fluid" alt="" />
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <img src="<%= data.img3 %> " class="img-fluid" alt="" />
-          </div>
-          <!--Grid column-->
-        </div>
         <!--Grid row-->
       </div>
-      <hr />
+      <br />
     </main>
     <!--Main layout-->
 
