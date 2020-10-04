@@ -64,4 +64,21 @@ module.exports = (app) => {
       }
     );
   });
+
+  app.get("/sold", async (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = await apps.findOne(User, req.user.id);
+      const { sold } = user;
+
+      let userInfo = {
+        userActive: true,
+        userData: req.user,
+        sold: sold,
+      };
+      res.render("sold", userInfo);
+    } else {
+      //loginroute
+      res.redirect("/signin");
+    }
+  });
 };

@@ -23,7 +23,7 @@
             class="nav-item list-group-item pl-1 py-2"
             style="margin-top: 40px !important"
           >
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="/userhome"
               ><i class="icon fas fa-tags"
                 ><span class="ml-2 align-middle">Purchases</span></i
               ></a
@@ -38,7 +38,7 @@
           </li>
 
           <li class="nav-item list-group-item pl-1 py-2">
-            <a class="nav-link" href="/sold"
+            <a class="nav-link" href="#"
               ><i class="icon far fa-laugh"
                 ><span class="ml-2 align-middle">Sold</span></i
               ></a
@@ -53,12 +53,12 @@
         <!--Section: Magazine v.1-->
         <section class="wow fadeIn">
           <!--Section heading-->
-          <h2 class="h1 text-center my-5 font-weight-bold">Your purchases</h2>
+          <h2 class="h1 text-center my-5 font-weight-bold">Sold</h2>
 
           <!--Grid row-->
           <div class="row text-left">
             <!--Grid column-->
-            <% purch.map((element)=>{ %>
+            <% sold.map((element)=>{ %>
             <div class="col-lg-6 col-md-12">
               <!--Image-->
               <div class="view overlay rounded z-depth-1-half mb-3">
@@ -79,9 +79,13 @@
                   </h6>
                 </a>
                 <h3><%= element.artist %></h3>
-                <br />
               </div>
+              <a href="/deleteart/<%= element._id %> ">
+                <span class="badge purple mr-1">Delete</span>
+              </a>
             </div>
+            <br />
+            <br />
             <% }) %>
             <!--Grid column-->
 
